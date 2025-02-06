@@ -4,11 +4,19 @@
 // iedereen: https://fdnd.directus.app/items/person/?fields=id,name,github_handle,avatar&filter={%22squads%22:{%22squad_id%22:{%22name%22:%22Minor%20Web%20Dev%22}}}&sort=name
 
 const baseURL = 'https://fdnd.directus.app/';
-const endpointMe = 'items/person/67';
+const endpointMe = 'items/person/217';
 
-
-
-
+// baseURL en endpoint met erkaar verbinden onder het const myURL
+const myURL = baseURL + endpointMe;
+// functie aanroepen voor my URL, daarna vertellen wat er daarna mee moet gebeuren
+getData(myURL).then( data217 => {
+	// maakt de variable "deH1" aan waarbij de h1 in html geselecteerd wordt
+	let deH1 = document.querySelector("h1");
+	// maakt de variable "myName" aan, op locatie data217.data.name staat mijn naam
+	let myName = data217.data.name;
+	//veranderd de content van de h1 naar de data wat onder myName staat
+	deH1.textContent = myName;
+});
 
 
 
